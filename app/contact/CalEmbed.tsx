@@ -2,6 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
+declare global {
+  interface Window {
+    Cal?: (...args: unknown[]) => void;
+  }
+}
+
 export default function CalEmbed() {
   const containerRef = useRef<HTMLDivElement>(null);
   const calLink =
@@ -10,41 +16,35 @@ export default function CalEmbed() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Remove any existing inline element
-    const existing = containerRef.current.querySelector("cal-inline");
-    if (existing) existing.remove();
+    // Define the init function Cal.com expects
+    window.Cal =
+      window.Cal ||
+      function (...args: unknown[]) {
+        (window.Cal as unknown as { q: unknown[] }).q =
+          (window.Cal as unknown as { q: unknown[] }).q || [];
+        (window.Cal as unknown as { q: unknown[] }).q.push(args);
+      };
 
-    // Create the <cal-inline> web component
-    const calInline = document.createElement("cal-inline");
-    calInline.setAttribute("data-cal-link", calLink);
-    calInline.style.width = "100%";
-    calInline.style.height = "600px";
-    containerRef.current.appendChild(calInline);
+    // Queue the inline embed call
+    window.Cal("inline", {
+      elementOrSelector: "#cal-embed-container",
+      calLink,
+    });
 
-    // Load the Cal.com embed script (idempotent — safe to call multiple times)
+    // Load the Cal.com embed script (only once)
     if (!document.querySelector('script[src="https://cal.com/embed"]')) {
       const script = document.createElement("script");
       script.type = "module";
       script.src = "https://cal.com/embed";
+      script.async = true;
       document.head.appendChild(script);
     }
 
-    // Init Cal after the web component is in the DOM
-    const initScript = document.createElement("script");
-    initScript.type = "module";
-    initScript.innerHTML = `
-      (async () => {
-        const Cal = (await import("https://cal.com/embed")).default;
-        Cal("inline", {
-          elementOrSelector: "#cal-embed-container",
-          calLink: "${calLink}"
-        });
-      })();
-    `;
-    document.head.appendChild(initScript);
-
     return () => {
-      initScript.remove();
+      // Clean up the container on unmount
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
     };
   }, [calLink]);
 
