@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/metadata";
 import { generatePersonSchema } from "@/lib/schema";
@@ -54,9 +55,23 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-dark via-navy to-navy-light py-16 text-white md:py-24">
         <div className="mx-auto max-w-content px-4">
-          <h1 className="font-serif text-3xl font-bold md:text-5xl">
-            About CA Sakshi Khedkar
-          </h1>
+          <div className="flex flex-col items-center gap-8 md:flex-row md:items-center">
+            <div className="flex-1">
+              <h1 className="font-serif text-3xl font-bold md:text-5xl">
+                About CA Sakshi Khedkar
+              </h1>
+            </div>
+            <div className="shrink-0">
+              <Image
+                src="/images/profile.jpeg"
+                alt="CA Sakshi Khedkar"
+                width={220}
+                height={220}
+                className="rounded-2xl border-4 border-gold/30 object-cover shadow-xl"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 

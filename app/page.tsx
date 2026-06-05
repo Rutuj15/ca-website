@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Building2,
@@ -97,8 +98,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-navy-dark via-navy to-navy-light py-20 text-white md:py-28">
         <div className="mx-auto max-w-content px-4">
-          <div className="max-w-3xl">
-            <h1 className="font-serif text-3xl leading-snug font-bold md:text-5xl md:leading-tight">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:items-start">
+            <div className="max-w-3xl flex-1">
+              <h1 className="font-serif text-3xl leading-snug font-bold md:text-5xl md:leading-tight">
               A Chartered Accountant in CSN (Aurangabad), with the range of a
               Big Four and the attention of a sole practitioner.
             </h1>
@@ -124,6 +126,17 @@ export default function Home() {
               >
                 Tax Tools &rarr;
               </Link>
+            </div>
+            </div>
+            <div className="shrink-0">
+              <Image
+                src="/images/profile.jpeg"
+                alt="CA Sakshi Khedkar"
+                width={280}
+                height={280}
+                className="rounded-2xl border-4 border-gold/30 object-cover shadow-xl"
+                priority
+              />
             </div>
           </div>
         </div>
