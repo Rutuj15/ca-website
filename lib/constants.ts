@@ -1,9 +1,9 @@
 export const SITE_NAME = "CA Sakshi Khedkar";
 
 export const CONTACT = {
-  phone: "+91 9XXXXX XXXX",
-  email: "contact@example.com",
-  whatsappUrl: "https://wa.me/919XXXXXXXXX",
+  phone: "+91 8275853032",
+  email: "sakshikhedkarassociates@gmail.com",
+  whatsappUrl: "https://wa.me/918275853032",
   address: "CSN (Chhatrapati Sambhajinagar), Maharashtra",
   icaiNo: "618819",
   hours: "Mon–Sat, 10:00 AM – 6:00 PM IST",
