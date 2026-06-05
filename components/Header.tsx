@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -44,9 +45,14 @@ export default function Header() {
       <header className="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="mx-auto flex h-16 max-w-content items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-serif text-lg font-bold text-navy md:text-xl">
-              CA Sakshi Khedkar
-            </span>
+            <Image
+              src="/logo.png"
+              alt="CA Sakshi Khedkar"
+              width={140}
+              height={48}
+              className="h-10 w-auto md:h-12"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -118,9 +124,14 @@ export default function Header() {
           />
           <div className="fixed right-0 top-0 z-50 h-full w-72 overflow-y-auto bg-white shadow-xl">
             <div className="flex items-center justify-between border-b px-4 py-3">
-              <span className="font-serif text-lg font-bold text-navy">
-                CA Sakshi Khedkar
-              </span>
+              <Image
+                src="/logo.png"
+                alt="CA Sakshi Khedkar"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="rounded-md p-1 text-gray-500 hover:bg-gray-100"

@@ -5,6 +5,7 @@ import "./globals.css";
 import ClientHeader from "@/components/ClientHeader";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +46,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <GoogleAnalytics />
         <ClientHeader />
         <main className="flex-1">{children}</main>
         <Footer />
