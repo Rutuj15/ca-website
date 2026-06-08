@@ -1,8 +1,4 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const CalEmbed = dynamic(() => import("./CalEmbed"), { ssr: false });
+import CalEmbed from "./CalEmbed";
 
 export default function CalWrapper() {
   return <CalEmbed />;
