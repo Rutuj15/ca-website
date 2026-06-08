@@ -98,7 +98,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-navy-dark via-navy to-navy-light py-20 text-white md:py-28">
         <div className="mx-auto max-w-content px-4">
-          <div className="flex flex-col items-center gap-10 md:items-start md:flex-row">
+          <div className="flex flex-col items-center gap-10 md:items-center md:flex-row">
             <div className="max-w-3xl flex-1">
               <h1 className="font-serif text-3xl leading-snug font-bold md:text-5xl md:leading-tight">
               A Chartered Accountant in CSN (Aurangabad), with the range of a
