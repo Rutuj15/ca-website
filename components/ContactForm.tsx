@@ -67,7 +67,7 @@ export default function ContactForm() {
     setStatus("loading");
 
     const formSpreeId =
-      process.env.NEXT_PUBLIC_FORMSPREE_ID || "placeholder-formspree-id";
+      process.env.NEXT_PUBLIC_FORMSPREE_ID || "mkoadnjo";
     const endpoint = `https://formspree.io/f/${formSpreeId}`;
 
     try {

@@ -31,7 +31,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+    google:
+      process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
+      "jwYFwQMsaYmd_8cBWqCi83KdXy45_ltMMN6Bh4H6RSA",
   },
 };
 
