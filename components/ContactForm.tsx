@@ -82,8 +82,7 @@ export default function ContactForm() {
           description: form.description,
         }),
       });
-      if (res.ok || res.status === 422) {
-        // 422 from placeholder is expected; treat as success for demo
+      if (res.ok) {
         setStatus("success");
         setForm({ name: "", mobile: "", email: "", service: "", description: "" });
       } else {
