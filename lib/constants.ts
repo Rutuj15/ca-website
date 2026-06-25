@@ -28,6 +28,7 @@ export const NAV_LINKS = [
       { label: "Tax Litigation", href: "/tax-litigation", icon: "Scale" },
     ],
   },
+  { label: "Blog", href: "/blog" },
   { label: "Tax Tools", href: "/tax-tools" },
   { label: "Contact", href: "/contact" },
 ] as const;

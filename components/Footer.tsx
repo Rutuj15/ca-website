@@ -50,6 +50,14 @@ export default function Footer() {
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
+                  href="/blog"
+                  className="text-sm transition-colors hover:text-gold"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tax-tools"
                   className="text-sm transition-colors hover:text-gold"
                 >

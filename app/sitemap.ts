@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     "",
     "/about",
+    "/blog",
     "/gst-services",
     "/income-tax",
     "/international-taxation",

@@ -1,0 +1,13 @@
+{
+  "name": "ca-sakshi-blog-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sanity Studio for the CA Sakshi blog (project g16uh3k7).",
+  "dependencies": {
+    "sanity": "^6.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15"
+  }
+}
